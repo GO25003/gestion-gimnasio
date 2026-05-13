@@ -22,23 +22,73 @@ Se ha definido la lógica y los flujos de control utilizando pseudocódigo como 
 * **`entrenadores.psc`**: CRUD completo (Registrar, buscar, actualizar y eliminar) de entrenadores.
 * **`inscripciones.psc`**: Gestión de inscripciones de miembros con validación automática de cupo.
 
+## Avance #2 (19/5/2026) — Implementación en Python  
+
+
+En esta etapa se inició la implementación funcional del sistema en Python, utilizando programación orientada a objetos, persistencia de datos con archivos JSON y una arquitectura dividida en modelos, servicios y repositorios.
+
+## Funcionalidades implementadas
+
+### Gestión de clases
+- Creación de clases de gimnasio.
+- Validación de capacidad máxima.
+- Generación automática de ID.
+- Persistencia en `clases.json`.
+
+### Gestión de entrenadores
+- Registro y listado de entrenadores.
+- Validación de datos.
+- Persistencia en `entrenadores.json`.
+
+### Gestión de miembros
+- Registro y búsqueda de miembros.
+- Validación de información.
+- Persistencia en `miembros.json`.
+
+### Gestión de inscripciones
+- Validación de existencia de miembros y clases.
+- Verificación de cupos disponibles.
+- Persistencia en `inscripciones.json`.
+
+### Gestión de asistencias
+- Registro automático de fecha y hora usando `datetime`.
+- Validación de inscripción previa del miembro.
+- Persistencia en `asistencias.json`.
+
+### Interfaz CLI
+- Implementación de menú principal interactivo.
+- Manejo de errores con `try/except`.
+
 ---
-## Requisitos para ejecución
+## Tecnologías utilizadas
 
-Para probar la lógica inicial de este avance, siga estos pasos:
+- Python 3
+- JSON
 
-1. **Instalar PSeInt**: [Descargar aquí](https://pseint.sourceforge.net/)
-2. **Configuración**: Configurar el perfil de lenguaje en modo **"Flexible"**.
-3. **Clonar el repositorio**:
+## Ejecución del proyecto
 
-   **Opción A: HTTPS**
-   ```bash
-   https://github.com/GO25003/gestion-gimnasio.git
+## Clonar el repositorio
 
-**Opción B: SSH**
+### HTTPS
+
+```bash
+git clone https://github.com/GO25003/gestion-gimnasio.git
+```
+
+### SSH
+
+```bash
+git clone git@github.com:GO25003/gestion-gimnasio.git
+```
+
+### Ejecutar el sistema
+
+```bash
+python main.py
+```
+
+### Requisitos
+
+- Python 3 instalado
 
     
-        git clone git@github.com:GO25003/gestion-gimnasio.git
-4. **Localización de archivos**:
-
-Navegar en la carpeta: gestion-gimnasio > pseudocodigo y abrir los archivos .psc en el software.
