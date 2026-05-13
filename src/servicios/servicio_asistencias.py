@@ -1,6 +1,6 @@
 from datetime import datetime
-from repositorio_asistencias import cargar_asistencias, guardar_asistencias
-from repositorio_inscripciones import cargar_inscripciones
+from datos.repositorio_asistencias import cargar_asistencias, guardar_asistencias
+from datos.repositorio_inscripciones import cargar_inscripciones
 
 def registrar_asistencia(id_miembro, id_clase):
 

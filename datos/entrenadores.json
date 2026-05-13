@@ -3,5 +3,10 @@
         "id_entrenador": 1,
         "nombre": "Ana",
         "especialidad": "Yoga"
+    },
+    {
+        "id_entrenador": 2,
+        "nombre": "Ana",
+        "especialidad": "Yoga"
     }
 ]
