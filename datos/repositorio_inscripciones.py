@@ -9,7 +9,7 @@ def cargar_inscripciones():
     with open(RUTA, "r") as archivo:
         return json.load(archivo)
 
-def guardar_inscripcion(inscripcion):
+def guardar_inscripciones(inscripcion):
     inscripciones = cargar_inscripciones()
     inscripciones.append(inscripcion)
     with open(RUTA, "w") as archivo:

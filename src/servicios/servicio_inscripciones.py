@@ -1,7 +1,7 @@
-from repositorio_inscripciones import cargar_inscripciones, guardar_inscripciones
-from servicio_miembros import buscar_miembro_por_id
-from servicio_clases import buscar_clase_por_id
-from repositorio_clases import cargar_clases, guardar_clases
+from datos.repositorio_inscripciones import cargar_inscripciones, guardar_inscripciones
+from servicios.servicio_miembros import buscar_miembro_por_id
+from servicios.servicio_clases import buscar_clase_por_id
+from datos.repositorio_clases import cargar_clases, guardar_clases
 
 def inscribir_miembro(id_miembro, id_clase):
 

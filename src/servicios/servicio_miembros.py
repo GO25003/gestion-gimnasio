@@ -1,5 +1,5 @@
-from repositorio_miembros import cargar_miembros, guardar_miembros
-from miembro import Miembro
+from datos.repositorio_miembros import cargar_miembros, guardar_miembros
+from modelos.miembro import Miembro
 
 
 def registrar_miembro(nombre, apellido, email):

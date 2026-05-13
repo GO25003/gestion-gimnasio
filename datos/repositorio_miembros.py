@@ -1,5 +1,5 @@
 import json
-from miembro import Miembro
+from modelos.miembro import Miembro
 
 RUTA_ARCHIVO = "datos/miembros.json"
 
