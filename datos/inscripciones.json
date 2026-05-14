@@ -1,8 +1,22 @@
 [
-    [
-        {
-            "id_miembro": 1,
-            "id_clase": 1
-        }
-    ]
+    {
+        "id_miembro": 4,
+        "id_clase": 1
+    },
+    {
+        "id_miembro": 2,
+        "id_clase": 1
+    },
+    {
+        "id_miembro": 2,
+        "id_clase": 1
+    },
+    {
+        "id_miembro": 3,
+        "id_clase": 1
+    },
+    {
+        "id_miembro": 4,
+        "id_clase": 1
+    }
 ]

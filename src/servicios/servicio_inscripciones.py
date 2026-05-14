@@ -32,3 +32,6 @@ def inscribir_miembro(id_miembro, id_clase):
     guardar_inscripciones(inscripciones)
 
     return "Inscripción realizada con éxito."
+
+def listar_inscripciones():
+    return cargar_inscripciones()
