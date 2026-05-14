@@ -27,3 +27,6 @@ def registrar_asistencia(id_miembro, id_clase):
     guardar_asistencias(asistencias)
 
     return "Asistencia registrada correctamente."
+
+def listar_asistencias():
+    return cargar_asistencias()
