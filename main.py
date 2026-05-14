@@ -1,3 +1,8 @@
+import sys
+import os
+
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), 'src'))
+
 from servicios.servicio_miembros import registrar_miembro, listar_miembros
 from servicios.servicio_clases import listar_clases
 from servicios.servicio_inscripciones import inscribir_miembro
