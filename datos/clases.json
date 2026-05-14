@@ -4,11 +4,5 @@
         "nombre_disciplina": "Yoga",
         "horario": "Lunes 10am",
         "capacidad_maxima": 15
-    },
-    {
-        "id_clase": 2,
-        "nombre_disciplina": "Yoga",
-        "horario": "Lunes 10am",
-        "capacidad_maxima": 15
     }
 ]

@@ -1,8 +1,26 @@
 [
     {
-        "id_miembro": 1,
-        "nombre": "Carlos Ocampo",
-        "apellido": "Ocampo",
-        "email": "garciabcarlos7@gmail.com"
+        "id_miembro": 2,
+        "nombre": "Fulanito",
+        "apellido": "Martinez",
+        "email": "martinez@gmail.com"
+    },
+    {
+        "id_miembro": 3,
+        "nombre": "carlos",
+        "apellido": "garcia",
+        "email": "garcia@gmail.com"
+    },
+    {
+        "id_miembro": 4,
+        "nombre": "ernesto",
+        "apellido": "garcia",
+        "email": "ernesto@gmail.com"
+    },
+    {
+        "id_miembro": 4,
+        "nombre": "manuel",
+        "apellido": "lopez",
+        "email": "lopezmanuel@ues.edu.sv"
     }
 ]
