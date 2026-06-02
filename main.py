@@ -104,7 +104,7 @@ def menu_miembros():
                 print("  Opción inválida.")
 
         except ValueError as e:
-            print(f"  Error de valor: {e}")
+            print(f"  Error de valor. Ingrese una opcion valida")
         except Exception as e:
             print(f"  Error inesperado: {e}")
 
@@ -185,7 +185,7 @@ def menu_clases():
                 print("  Opción inválida.")
 
         except ValueError as e:
-            print(f"  Error de valor: {e}")
+            print(f"  Error de valor. Ingrese una opcion valida")
         except Exception as e:
             print(f"  Error inesperado: {e}")
 
@@ -227,7 +227,7 @@ def menu_entrenadores():
                 print("  Opción inválida.")
 
         except ValueError as e:
-            print(f"  Error de valor: {e}")
+            print(f"  Error de valor. Ingrese una opcion valida")
         except Exception as e:
             print(f"  Error inesperado: {e}")
 
@@ -284,7 +284,7 @@ def menu_operaciones():
                 print("  Opción inválida.")
 
         except ValueError as e:
-            print(f"  Error de valor: {e}")
+            print(f"  Error de valor. Ingrese una opcion valida")
         except Exception as e:
             print(f"  Error inesperado: {e}")
 
@@ -325,7 +325,7 @@ def menu_principal():
                 print("  Opción inválida.")
 
         except ValueError as e:
-            print(f"  Error de valor: {e}")
+            print(f"  Error de valor. Ingrese una opcion valida")
         except Exception as e:
             print(f"  Error inesperado: {e}")
 
