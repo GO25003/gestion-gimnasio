@@ -287,10 +287,9 @@ def menu_clases():
             else:
                 print("  Opción inválida.")
 
-        except ValueError:
+        except ValueError as e:
             print(
-                "  Error de valor. "
-                "Ingrese una opción válida"
+                f"  Error: {e}"
             )
 
         except Exception as e:
@@ -299,7 +298,6 @@ def menu_clases():
             )
 
         pausar()
-
 
 # ─────────────────────────────────────────────
 #  MÓDULO: ENTRENADORES
