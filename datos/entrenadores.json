@@ -13,5 +13,25 @@
         "id_entrenador": 3,
         "nombre": "Ana",
         "especialidad": "Yoga"
+    },
+    {
+        "id_entrenador": 4,
+        "nombre": "Laura",
+        "especialidad": "Yoga"
+    },
+    {
+        "id_entrenador": 5,
+        "nombre": "Pedro",
+        "especialidad": "Crossfit"
+    },
+    {
+        "id_entrenador": 6,
+        "nombre": "Laura",
+        "especialidad": "Yoga"
+    },
+    {
+        "id_entrenador": 7,
+        "nombre": "Pedro",
+        "especialidad": "Crossfit"
     }
 ]
