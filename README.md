@@ -59,6 +59,19 @@ En esta etapa se inició la implementación funcional del sistema en Python, uti
 - Implementación de menú principal interactivo.
 - Manejo de errores con `try/except`.
 
+
+## Avance #3 (19/5/2026) — Entrega final
+
+Para esta entrega final, se han mejorado los mensajes de error para mostrarle algo mas amigable al usuario, se completo el CRUD de entrenadores, y se implementaron pruebas unitarias 
+### Pruebas unitarias
+- Pruebas unitarias para asistencias, inscripciones, clases y entrenadores
+
+### Manejo de errores
+- Se implemento un mensaje mas amigable para el usuario para cuando se capta un error
+
+### CRUD entrenadores
+- Se completo el CRUD de entrenadores y se agregar una validacion en las clases, verificando que el entrenador exista al momento de crear una clase
+
 ---
 ## Tecnologías utilizadas
 
