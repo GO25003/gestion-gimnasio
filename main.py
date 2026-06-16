@@ -2,18 +2,31 @@ import sys
 import os
 
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), 'src'))
+
 from servicios.servicio_miembros import (
     registrar_miembro, listar_miembros, buscar_miembro_por_id,
     actualizar_miembro, eliminar_miembro
 )
+
 from servicios.servicio_clases import (
     crear_clase, listar_clases, buscar_clase_por_id,
     actualizar_clase, eliminar_clase
 )
-from servicios.servicio_inscripciones import inscribir_miembro, listar_inscripciones
-from servicios.servicio_asistencias import registrar_asistencia, cargar_asistencias, listar_asistencias
-from servicios.servicio_entrenadores import registrar_entrenador, listar_entrenadores
 
+from servicios.servicio_inscripciones import (
+    inscribir_miembro, listar_inscripciones
+)
+
+from servicios.servicio_asistencias import (
+    registrar_asistencia, cargar_asistencias, listar_asistencias
+)
+
+from servicios.servicio_entrenadores import (
+    registrar_entrenador,
+    listar_entrenadores,
+    actualizar_entrenador,
+    eliminar_entrenador
+)
 
 # ─────────────────────────────────────────────
 #  UTILIDAD
@@ -129,65 +142,161 @@ def menu_clases():
             opcion = int(input("\n  Opción: "))
 
             if opcion == 1:
-                nombre   = input("  Nombre de la disciplina: ")
-                horario  = input("  Horario (ej: Lunes 08:00): ")
+                nombre = input("  Nombre de la disciplina: ")
+                horario = input("  Horario (ej: Lunes 08:00): ")
                 capacidad = int(input("  Capacidad máxima: "))
-                clase = crear_clase(nombre, horario, capacidad)
-                print(f"  ✓ Clase creada con ID {clase.id_clase}.")
+                entrenador = input("  Entrenador: ")
+
+                clase = crear_clase(
+                    nombre,
+                    horario,
+                    capacidad,
+                    entrenador
+                )
+
+                print(
+                    f"  ✓ Clase creada con ID "
+                    f"{clase.id_clase}."
+                )
 
             elif opcion == 2:
                 clases = listar_clases()
+
                 if not clases:
                     print("  Sin clases registradas.")
                 else:
                     separador("Lista de clases")
+
                     for c in clases:
-                        print(f"  [{c.id_clase}] {c.nombre_disciplina} | {c.horario} | Cupo: {c.capacidad_maxima}")
+                        print(
+                            f"  [{c.id_clase}] "
+                            f"{c.nombre_disciplina} | "
+                            f"{c.horario} | "
+                            f"Cupo: {c.capacidad_maxima} | "
+                            f"Entrenador: {c.entrenador}"
+                        )
 
             elif opcion == 3:
-                id_clase = int(input("  ID de la clase: "))
-                clase = buscar_clase_por_id(id_clase)
+                id_clase = int(
+                    input("  ID de la clase: ")
+                )
+
+                clase = buscar_clase_por_id(
+                    id_clase
+                )
+
                 if clase:
-                    print(f"  [{clase.id_clase}] {clase.nombre_disciplina} | {clase.horario} | Cupo: {clase.capacidad_maxima}")
+                    print(
+                        f"  [{clase.id_clase}] "
+                        f"{clase.nombre_disciplina} | "
+                        f"{clase.horario} | "
+                        f"Cupo: {clase.capacidad_maxima} | "
+                        f"Entrenador: {clase.entrenador}"
+                    )
                 else:
-                    print("  ✗ Clase no encontrada.")
+                    print(
+                        "  ✗ Clase no encontrada."
+                    )
 
             elif opcion == 4:
-                id_clase = int(input("  ID de la clase a actualizar: "))
-                clase = buscar_clase_por_id(id_clase)
+                id_clase = int(
+                    input(
+                        "  ID de la clase a actualizar: "
+                    )
+                )
+
+                clase = buscar_clase_por_id(
+                    id_clase
+                )
+
                 if not clase:
-                    print("  ✗ Clase no encontrada.")
+                    print(
+                        "  ✗ Clase no encontrada."
+                    )
                 else:
-                    print(f"  Actual: {clase.nombre_disciplina} | {clase.horario} | Cupo: {clase.capacidad_maxima}")
-                    print("  (Deja en blanco para no modificar)")
-                    nuevo_nombre    = input("  Nuevo nombre de disciplina: ")
-                    nuevo_horario   = input("  Nuevo horario: ")
-                    nueva_cap_str   = input("  Nueva capacidad: ")
-                    nueva_capacidad = int(nueva_cap_str) if nueva_cap_str.strip() else None
+
+                    print(
+                        f"  Actual: "
+                        f"{clase.nombre_disciplina} | "
+                        f"{clase.horario} | "
+                        f"Cupo: {clase.capacidad_maxima} | "
+                        f"Entrenador: {clase.entrenador}"
+                    )
+
+                    print(
+                        "  (Deja en blanco para no modificar)"
+                    )
+
+                    nuevo_nombre = input(
+                        "  Nuevo nombre de disciplina: "
+                    )
+
+                    nuevo_horario = input(
+                        "  Nuevo horario: "
+                    )
+
+                    nueva_cap_str = input(
+                        "  Nueva capacidad: "
+                    )
+
+                    nuevo_entrenador = input(
+                        "  Nuevo entrenador: "
+                    )
+
+                    nueva_capacidad = (
+                        int(nueva_cap_str)
+                        if nueva_cap_str.strip()
+                        else None
+                    )
+
                     actualizada = actualizar_clase(
                         id_clase,
-                        nuevo_nombre  or None,
+                        nuevo_nombre or None,
                         nuevo_horario or None,
                         nueva_capacidad,
+                        nuevo_entrenador or None
                     )
-                    print(f"  ✓ Actualizada: {actualizada.nombre_disciplina} | {actualizada.horario} | Cupo: {actualizada.capacidad_maxima}")
+
+                    print(
+                        f"  ✓ Actualizada: "
+                        f"{actualizada.nombre_disciplina} | "
+                        f"{actualizada.horario} | "
+                        f"Cupo: {actualizada.capacidad_maxima} | "
+                        f"Entrenador: {actualizada.entrenador}"
+                    )
 
             elif opcion == 5:
-                id_clase = int(input("  ID de la clase a eliminar: "))
+                id_clase = int(
+                    input(
+                        "  ID de la clase a eliminar: "
+                    )
+                )
+
                 if eliminar_clase(id_clase):
-                    print("  ✓ Clase eliminada.")
+                    print(
+                        "  ✓ Clase eliminada."
+                    )
                 else:
-                    print("  ✗ Clase no encontrada.")
+                    print(
+                        "  ✗ Clase no encontrada."
+                    )
 
             elif opcion == 0:
                 break
+
             else:
                 print("  Opción inválida.")
 
-        except ValueError as e:
-            print(f"  Error de valor. Ingrese una opcion valida")
+        except ValueError:
+            print(
+                "  Error de valor. "
+                "Ingrese una opción válida"
+            )
+
         except Exception as e:
-            print(f"  Error inesperado: {e}")
+            print(
+                f"  Error inesperado: {e}"
+            )
 
         pausar()
 
@@ -201,38 +310,98 @@ def menu_entrenadores():
         separador("ENTRENADORES")
         print("  1. Registrar entrenador")
         print("  2. Listar entrenadores")
+        print("  3. Actualizar entrenador")
+        print("  4. Eliminar entrenador")
         print("  0. ← Volver")
 
         try:
             opcion = int(input("\n  Opción: "))
 
             if opcion == 1:
-                nombre       = input("  Nombre: ")
+                nombre = input("  Nombre: ")
                 especialidad = input("  Especialidad: ")
-                entrenador   = registrar_entrenador(nombre, especialidad)
-                print(f"  ✓ Entrenador registrado con ID {entrenador.id_entrenador}.")
+
+                entrenador = registrar_entrenador(
+                    nombre,
+                    especialidad
+                )
+
+                print(
+                    f"  ✓ Entrenador registrado con ID "
+                    f"{entrenador.id_entrenador}."
+                )
 
             elif opcion == 2:
                 entrenadores = listar_entrenadores()
+
                 if not entrenadores:
                     print("  Sin entrenadores registrados.")
                 else:
                     separador("Lista de entrenadores")
+
                     for e in entrenadores:
-                        print(f"  [{e.id_entrenador}] {e.nombre} — {e.especialidad}")
+                        print(
+                            f"  [{e.id_entrenador}] "
+                            f"{e.nombre} — {e.especialidad}"
+                        )
+
+            elif opcion == 3:
+
+                id_entrenador = int(
+                    input("  ID del entrenador: ")
+                )
+
+                nombre = input(
+                    "  Nuevo nombre: "
+                )
+
+                especialidad = input(
+                    "  Nueva especialidad: "
+                )
+
+                entrenador = actualizar_entrenador(
+                    id_entrenador,
+                    nombre,
+                    especialidad
+                )
+
+                print(
+                    f"  ✓ Actualizado: "
+                    f"{entrenador.nombre}"
+                )
+
+            elif opcion == 4:
+
+                id_entrenador = int(
+                    input("  ID del entrenador: ")
+                )
+
+                eliminar_entrenador(
+                    id_entrenador
+                )
+
+                print(
+                    "  ✓ Entrenador eliminado."
+                )
 
             elif opcion == 0:
                 break
+
             else:
                 print("  Opción inválida.")
 
-        except ValueError as e:
-            print(f"  Error de valor. Ingrese una opcion valida")
+        except ValueError:
+            print(
+                "  Error de valor. "
+                "Ingrese una opción válida"
+            )
+
         except Exception as e:
-            print(f"  Error inesperado: {e}")
+            print(
+                f"  Error inesperado: {e}"
+            )
 
         pausar()
-
 
 # ─────────────────────────────────────────────
 #  MÓDULO: OPERACIONES
